@@ -13,6 +13,7 @@
 		09F9E7501CA1D0310012AFD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09F9E74E1CA1D0310012AFD0 /* Main.storyboard */; };
 		09F9E7521CA1D0310012AFD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09F9E7511CA1D0310012AFD0 /* Assets.xcassets */; };
 		09F9E7551CA1D0310012AFD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09F9E7531CA1D0310012AFD0 /* LaunchScreen.storyboard */; };
+		09F9E75E1CA1E6AE0012AFD0 /* DinosaurInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F9E75D1CA1E6AE0012AFD0 /* DinosaurInfoViewController.m */; };
 		251E20271CA1D59700B0312E /* Dinosaur.m in Sources */ = {isa = PBXBuildFile; fileRef = 251E20261CA1D59700B0312E /* Dinosaur.m */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,8 @@
 		09F9E7511CA1D0310012AFD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09F9E7541CA1D0310012AFD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09F9E7561CA1D0310012AFD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09F9E75C1CA1E6AE0012AFD0 /* DinosaurInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DinosaurInfoViewController.h; sourceTree = "<group>"; };
+		09F9E75D1CA1E6AE0012AFD0 /* DinosaurInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DinosaurInfoViewController.m; sourceTree = "<group>"; };
 		251E20251CA1D59700B0312E /* Dinosaur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dinosaur.h; path = ../Dinosaur.h; sourceTree = "<group>"; };
 		251E20261CA1D59700B0312E /* Dinosaur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dinosaur.m; path = ../Dinosaur.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +71,8 @@
 				251E20251CA1D59700B0312E /* Dinosaur.h */,
 				251E20261CA1D59700B0312E /* Dinosaur.m */,
 				09F9E74E1CA1D0310012AFD0 /* Main.storyboard */,
+				09F9E75C1CA1E6AE0012AFD0 /* DinosaurInfoViewController.h */,
+				09F9E75D1CA1E6AE0012AFD0 /* DinosaurInfoViewController.m */,
 				09F9E7511CA1D0310012AFD0 /* Assets.xcassets */,
 				09F9E7531CA1D0310012AFD0 /* LaunchScreen.storyboard */,
 				09F9E7561CA1D0310012AFD0 /* Info.plist */,
@@ -157,6 +162,7 @@
 			files = (
 				09F9E74D1CA1D0310012AFD0 /* ViewController.m in Sources */,
 				09F9E74A1CA1D0310012AFD0 /* AppDelegate.m in Sources */,
+				09F9E75E1CA1E6AE0012AFD0 /* DinosaurInfoViewController.m in Sources */,
 				251E20271CA1D59700B0312E /* Dinosaur.m in Sources */,
 				09F9E7471CA1D0310012AFD0 /* main.m in Sources */,
 			);

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -30,18 +31,18 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A2B-ay-Wju" id="izy-rE-xMY">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Rb-3A-3UK">
-                                                    <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                                    <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n3r-w3-PRM">
-                                                    <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                                    <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -110,10 +111,10 @@
             </objects>
             <point key="canvasLocation" x="1162" y="-342"/>
         </scene>
-        <!--View Controller-->
+        <!--Dinosaur Info View Controller-->
         <scene sceneID="BsT-df-rij">
             <objects>
-                <viewController id="ykW-4z-L4H" sceneMemberID="viewController">
+                <viewController id="ykW-4z-L4H" customClass="DinosaurInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k3x-9b-YQg"/>
                         <viewControllerLayoutGuide type="bottom" id="tzF-IN-ssP"/>
@@ -121,12 +122,41 @@
                     <view key="view" contentMode="scaleToFill" id="0n7-4W-EIJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0QB-6j-nXm">
+                                <rect key="frame" x="162" y="28" width="276" height="245"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeC-hC-wQB">
+                                <rect key="frame" x="221" y="290" width="159" height="57"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRO-At-XgZ">
+                                <rect key="frame" x="108" y="368" width="385" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0QB-6j-nXm" firstAttribute="leading" secondItem="0n7-4W-EIJ" secondAttribute="leadingMargin" constant="142" id="GTi-in-BxF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0QB-6j-nXm" secondAttribute="trailing" constant="142" id="JD0-mE-X5t"/>
+                            <constraint firstItem="xRO-At-XgZ" firstAttribute="centerX" secondItem="0n7-4W-EIJ" secondAttribute="centerX" id="JKL-iG-tGm"/>
+                            <constraint firstItem="0QB-6j-nXm" firstAttribute="top" secondItem="k3x-9b-YQg" secondAttribute="bottom" constant="8" id="hx5-Pe-hxT"/>
+                            <constraint firstItem="eeC-hC-wQB" firstAttribute="centerX" secondItem="0n7-4W-EIJ" secondAttribute="centerX" id="umq-oC-Q2B"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="xRO-At-XgZ" id="Vly-Wf-WcH"/>
+                        <outlet property="dinosaurImageOutlet" destination="0QB-6j-nXm" id="c3u-Bd-E5y"/>
+                        <outlet property="nameLabel" destination="eeC-hC-wQB" id="jHp-l2-6zo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dz1-tM-re9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1869" y="-342"/>
+            <point key="canvasLocation" x="1847" y="-342"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lgq-ax-kp8">

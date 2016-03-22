@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Dinosaur.h"
+#import "DinosaurInfoViewController.h"
 
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -66,5 +67,14 @@
     [self.dinosaurTableView reloadData];
     
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UITableViewCell *)sender {
+    NSIndexPath *indexPath = [self.dinosaurTableView indexPathForCell:sender];
+    Dinosaur *dinosaur = self.dinosaurs[indexPath.row];
+    DinosaurInfoViewController *destination = segue.destinationViewController;
+    destination.dinosaur = dinosaur;
+}
+
+
 
 @end
