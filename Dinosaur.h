@@ -13,8 +13,11 @@
 @property NSString *name;
 @property UIImage *dinosaurImage;
 @property NSString *dinosaurDescription;
+@property NSArray *attributes;
 
--(instancetype) initWithName:(NSString *)name withDescription:(NSString *)dinosaurDescription andImage:(UIImage *)dinosaurImage;
+//-(instancetype) initWithName:(NSString *)name withDescription:(NSString *)dinosaurDescription withImage:(UIImage *)dinosaurImage;
+
+-(instancetype) initWithName:(NSString *)name withDescription:(NSString *)dinosaurDescription withImage:(UIImage *)dinosaurImage andAttributes:(NSArray *)attributes;
 
 
 @end

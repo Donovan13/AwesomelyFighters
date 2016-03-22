@@ -10,13 +10,14 @@
 
 @implementation Dinosaur
 
--(instancetype) initWithName:(NSString *)name withDescription:(NSString *)dinosaurDescription andImage:(UIImage *)dinosaurImage {
+-(instancetype) initWithName:(NSString *)name withDescription:(NSString *)dinosaurDescription withImage:(UIImage *)dinosaurImage andAttributes:(NSArray *)attributes {
     
     self = [super init];
     if(self) {
         self.name = name;
         self.dinosaurDescription = dinosaurDescription;
         self.dinosaurImage = dinosaurImage;
+        self.attributes = attributes;
     }
     return self;
 }

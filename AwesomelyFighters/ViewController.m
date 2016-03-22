@@ -25,9 +25,9 @@
     [super viewDidLoad];
 
 
-    Dinosaur *fred = [[Dinosaur alloc]initWithName:@"Fred" withDescription:@"Mean and Green" andImage:[UIImage imageNamed:@"dino1"]];
-    Dinosaur *bill = [[Dinosaur alloc]initWithName:@"Bill" withDescription:@"Nice guy" andImage:[UIImage imageNamed:@"dino2"]];
-    Dinosaur *stan = [[Dinosaur alloc]initWithName:@"Stan" withDescription:@"Watch out" andImage:[UIImage imageNamed:@"dino3"]];
+    Dinosaur *fred = [[Dinosaur alloc]initWithName:@"Fred" withDescription:@"Mean and Green" withImage:[UIImage imageNamed:@"dino1"] andAttributes:@[@"Read",@"Hike",@"Eat"]];
+    Dinosaur *bill = [[Dinosaur alloc]initWithName:@"Bill" withDescription:@"Nice guy" withImage:[UIImage imageNamed:@"dino2"] andAttributes:@[@"Play golf"]];
+    Dinosaur *stan = [[Dinosaur alloc]initWithName:@"Stan" withDescription:@"Watch out" withImage:[UIImage imageNamed:@"dino3"] andAttributes:@[@"Go rock climbing"]];
     
     self.dinosaurs = [[NSMutableArray alloc]init];
     [self.dinosaurs addObject:fred];
