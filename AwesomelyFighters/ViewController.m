@@ -8,7 +8,11 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDataSource,UITableViewDelegate>
+
+
+@property (weak, nonatomic) IBOutlet UITextField *dinasaurNameOutlet;
+@property (weak, nonatomic) IBOutlet UITextField *dinasaurDescriptionOutlet;
 
 @end
 
@@ -22,6 +26,21 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 0;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return nil;
+}
+
+- (IBAction)addButtonPressed:(UIButton *)sender {
+    
+    
 }
 
 @end
