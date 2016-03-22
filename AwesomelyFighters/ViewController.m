@@ -7,12 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "Dinosaur.h"
 
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate>
 
-
 @property (weak, nonatomic) IBOutlet UITextField *dinasaurNameOutlet;
 @property (weak, nonatomic) IBOutlet UITextField *dinasaurDescriptionOutlet;
+@property NSMutableArray *dinosaurs;
 
 @end
 
@@ -20,26 +21,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+
+    Dinosaur *fred = [[Dinosaur alloc]initWithName:@"fred" withDescription:@"Mean and Green" andImage:[UIImage imageNamed:@"dino1.png"]];
+    
+    Dinosaur *bill = [[Dinosaur alloc]initWithName:@"bill" withDescription:@"Nice guy" andImage:[UIImage imageNamed:@"dino2.png"]];
+    
+    Dinosaur *stan = [[Dinosaur alloc]initWithName:@"stan" withDescription:@"Watch out" andImage:[UIImage imageNamed:@"dino3.png"]];
+    
+    [self.dinosaurs addObject:fred];
+    [self.dinosaurs addObject:bill];
+    [self.dinosaurs addObject:stan];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 0;
+    return self.dinosaurs.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return nil;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    Dinosaur *dinosaur = self.dinosaurs[indexPath.row];
+    
+    
+    return cell;
+    
+    
+    
 }
 
 - (IBAction)addButtonPressed:(UIButton *)sender {
-    
+
     
 }
 

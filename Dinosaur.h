@@ -14,4 +14,6 @@
 @property UIImage *dinosaurImage;
 @property NSString *dinosaurDescription;
 
+-(instancetype) initWithName:(NSString *)name withDescription:(NSString *)dinosaurDescription andImage:(UIImage *)dinosaurImage;
+
 @end
