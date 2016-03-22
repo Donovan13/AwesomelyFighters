@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *dinasaurNameOutlet;
 @property (weak, nonatomic) IBOutlet UITextField *dinasaurDescriptionOutlet;
 @property NSMutableArray *dinosaurs;
+@property (weak, nonatomic) IBOutlet UITableView *dinosaurTableView;
 
 @end
 
@@ -23,16 +24,15 @@
     [super viewDidLoad];
 
 
-    Dinosaur *fred = [[Dinosaur alloc]initWithName:@"fred" withDescription:@"Mean and Green" andImage:[UIImage imageNamed:@"dino1.png"]];
+    Dinosaur *fred = [[Dinosaur alloc]initWithName:@"Fred" withDescription:@"Mean and Green" andImage:[UIImage imageNamed:@"dino1"]];
+    Dinosaur *bill = [[Dinosaur alloc]initWithName:@"Bill" withDescription:@"Nice guy" andImage:[UIImage imageNamed:@"dino2"]];
+    Dinosaur *stan = [[Dinosaur alloc]initWithName:@"Stan" withDescription:@"Watch out" andImage:[UIImage imageNamed:@"dino3"]];
     
-    Dinosaur *bill = [[Dinosaur alloc]initWithName:@"bill" withDescription:@"Nice guy" andImage:[UIImage imageNamed:@"dino2.png"]];
-    
-    Dinosaur *stan = [[Dinosaur alloc]initWithName:@"stan" withDescription:@"Watch out" andImage:[UIImage imageNamed:@"dino3.png"]];
-    
+    self.dinosaurs = [[NSMutableArray alloc]init];
     [self.dinosaurs addObject:fred];
     [self.dinosaurs addObject:bill];
     [self.dinosaurs addObject:stan];
-    
+
 }
 
 
@@ -45,16 +45,25 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     Dinosaur *dinosaur = self.dinosaurs[indexPath.row];
-    
+    cell.textLabel.text = dinosaur.name;
+    cell.detailTextLabel.text = dinosaur.dinosaurDescription;
+    cell.imageView.image = dinosaur.dinosaurImage;
     
     return cell;
-    
-    
-    
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80.0;
 }
 
 - (IBAction)addButtonPressed:(UIButton *)sender {
-
+    
+    Dinosaur *dinosaur = [[Dinosaur alloc]init];
+    dinosaur.name = self.dinasaurNameOutlet.text;
+    dinosaur.dinosaurDescription = self.dinasaurDescriptionOutlet.text;
+    dinosaur.dinosaurImage = [UIImage imageNamed:@"dino7"];
+    [self.dinosaurs addObject:dinosaur];
+    [self.dinosaurTableView reloadData];
     
 }
 
